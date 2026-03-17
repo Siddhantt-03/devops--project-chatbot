@@ -5,6 +5,7 @@
 **Course:** CSE3253 DevOps [PE6]  
 **Semester:** VI (2025-2026)  
 **Project Type:** DevOps Chatbot Assistant - AI-powered chatbot answering DevOps questions and suggesting solutions
+
 ---
 
 ## Project Overview
