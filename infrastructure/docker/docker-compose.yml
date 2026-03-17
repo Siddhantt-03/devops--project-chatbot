@@ -1,0 +1,29 @@
+version: '3.8'
+
+services:
+  chatbot:
+    build:
+      context: ../..
+      dockerfile: infrastructure/docker/Dockerfile
+    container_name: devops-chatbot
+    ports:
+      - "8000:8000"
+    environment:
+      - APP_ENV=development
+      - GEMINI_API_KEY=${GEMINI_API_KEY}
+      - MAX_TOKENS=1024
+    env_file:
+      - ../../.env
+    volumes:
+      - ../../src/main:/app
+      - chatbot_logs:/app/logs
+    restart: unless-stopped
+    networks:
+      - chatbot-network
+
+volumes:
+  chatbot_logs:
+
+networks:
+  chatbot-network:
+    driver: bridge
